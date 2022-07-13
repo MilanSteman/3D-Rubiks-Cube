@@ -1,0 +1,213 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --BREEDTE-RATIO: 1;
+  --DIEPTE-RATIO: 1;
+  --hoogte: 6.25em;
+  --breedte: calc(var(--hoogte) * var(--BREEDTE-RATIO));
+  --diepte: calc(var(--hoogte) / var(--DIEPTE-RATIO));
+  --perspective-size: 325em;
+  --hoogteX3: calc(var(--hoogte) * 3);
+  --breedteX3: calc(var(--breedte) * 3);
+  --diepteX3: calc(var(--diepte) * 3);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+main article {
+  position: relative;
+  width: calc(var(--breedte) * 3);
+  height: calc(var(--hoogte) * 3);
+  -webkit-perspective: var(--perspective-size);
+          perspective: var(--perspective-size);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate3d(1, 1, 0, 322deg);
+          transform: rotate3d(1, 1, 0, 322deg);
+}
+
+main article ol {
+  width: var(--breedte);
+  height: var(--hoogte);
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  -webkit-transition: 2s forwards;
+  transition: 2s forwards;
+}
+
+main article ol.move-y {
+  -webkit-transform: rotateX(-90deg) translateY(-200px);
+          transform: rotateX(-90deg) translateY(-200px);
+}
+
+main article ol[data-pos="19"].flip {
+  -webkit-transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateX(-200px) !important;
+          transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateX(-200px) !important;
+}
+
+main article ol[data-pos="22"].flip {
+  -webkit-transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateX(-100px) translateY(-100px) !important;
+          transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateX(-100px) translateY(-100px) !important;
+}
+
+main article ol[data-pos="25"].flip {
+  -webkit-transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateY(-200px) !important;
+          transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateY(-200px) !important;
+}
+
+main article ol[data-pos="26"].flip {
+  -webkit-transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateY(-100px) translateX(100px) !important;
+          transform: rotateZ(0.75turn) translateZ(calc(var(--diepte) * 2)) translateY(-100px) translateX(100px) !important;
+}
+
+main article ol:nth-of-type(1), main article ol:nth-of-type(10), main article ol:nth-of-type(19) {
+  left: 0;
+  top: 0;
+}
+
+main article ol:nth-of-type(2), main article ol:nth-of-type(11), main article ol:nth-of-type(20) {
+  left: 0;
+  top: var(--hoogte);
+}
+
+main article ol:nth-of-type(3), main article ol:nth-of-type(12), main article ol:nth-of-type(21) {
+  left: 0;
+  top: calc(var(--hoogte) * 2);
+}
+
+main article ol:nth-of-type(4), main article ol:nth-of-type(13), main article ol:nth-of-type(22) {
+  left: var(--breedte);
+  top: 0;
+}
+
+main article ol:nth-of-type(5), main article ol:nth-of-type(14), main article ol:nth-of-type(23) {
+  left: var(--breedte);
+  top: var(--hoogte);
+}
+
+main article ol:nth-of-type(6), main article ol:nth-of-type(15), main article ol:nth-of-type(24) {
+  left: var(--breedte);
+  top: calc(var(--hoogte) * 2);
+}
+
+main article ol:nth-of-type(7), main article ol:nth-of-type(16), main article ol:nth-of-type(25) {
+  left: calc(var(--breedte) * 2);
+  top: 0;
+}
+
+main article ol:nth-of-type(8), main article ol:nth-of-type(17), main article ol:nth-of-type(26) {
+  left: calc(var(--breedte) * 2);
+  top: var(--hoogte);
+}
+
+main article ol:nth-of-type(9), main article ol:nth-of-type(18), main article ol:nth-of-type(27) {
+  left: calc(var(--breedte) * 2);
+  top: calc(var(--hoogte) * 2);
+}
+
+main article ol:nth-of-type(1) li:nth-of-type(3), main article ol:nth-of-type(2) li:nth-of-type(3), main article ol:nth-of-type(3) li:nth-of-type(3), main article ol:nth-of-type(4) li:nth-of-type(3), main article ol:nth-of-type(5) li:nth-of-type(3), main article ol:nth-of-type(6) li:nth-of-type(3), main article ol:nth-of-type(7) li:nth-of-type(3), main article ol:nth-of-type(8) li:nth-of-type(3), main article ol:nth-of-type(9) li:nth-of-type(3) {
+  background-color: orange;
+}
+
+main article ol:nth-of-type(10), main article ol:nth-of-type(11), main article ol:nth-of-type(12), main article ol:nth-of-type(13), main article ol:nth-of-type(14), main article ol:nth-of-type(15), main article ol:nth-of-type(16), main article ol:nth-of-type(17), main article ol:nth-of-type(18) {
+  -webkit-transform: translateZ(var(--diepte));
+          transform: translateZ(var(--diepte));
+}
+
+main article ol:nth-of-type(19), main article ol:nth-of-type(20), main article ol:nth-of-type(21), main article ol:nth-of-type(22), main article ol:nth-of-type(23), main article ol:nth-of-type(24), main article ol:nth-of-type(25), main article ol:nth-of-type(26), main article ol:nth-of-type(27), main article ol:nth-of-type(28) {
+  -webkit-transform: translateZ(calc(var(--diepte) * 2));
+          transform: translateZ(calc(var(--diepte) * 2));
+}
+
+main article ol:nth-of-type(19) li:nth-of-type(1), main article ol:nth-of-type(20) li:nth-of-type(1), main article ol:nth-of-type(21) li:nth-of-type(1), main article ol:nth-of-type(22) li:nth-of-type(1), main article ol:nth-of-type(23) li:nth-of-type(1), main article ol:nth-of-type(24) li:nth-of-type(1), main article ol:nth-of-type(25) li:nth-of-type(1), main article ol:nth-of-type(26) li:nth-of-type(1), main article ol:nth-of-type(27) li:nth-of-type(1), main article ol:nth-of-type(28) li:nth-of-type(1) {
+  background-color: red;
+}
+
+main article ol:nth-of-type(1) li:nth-of-type(2), main article ol:nth-of-type(4) li:nth-of-type(2), main article ol:nth-of-type(7) li:nth-of-type(2), main article ol:nth-of-type(10) li:nth-of-type(2), main article ol:nth-of-type(13) li:nth-of-type(2), main article ol:nth-of-type(16) li:nth-of-type(2), main article ol:nth-of-type(19) li:nth-of-type(2), main article ol:nth-of-type(22) li:nth-of-type(2), main article ol:nth-of-type(25) li:nth-of-type(2) {
+  background-color: yellow;
+}
+
+main article ol:nth-of-type(1) li:nth-of-type(5), main article ol:nth-of-type(2) li:nth-of-type(5), main article ol:nth-of-type(3) li:nth-of-type(5), main article ol:nth-of-type(10) li:nth-of-type(5), main article ol:nth-of-type(11) li:nth-of-type(5), main article ol:nth-of-type(12) li:nth-of-type(5), main article ol:nth-of-type(19) li:nth-of-type(5), main article ol:nth-of-type(20) li:nth-of-type(5), main article ol:nth-of-type(21) li:nth-of-type(5) {
+  background-color: blue;
+}
+
+main article ol:nth-of-type(3n) li:nth-of-type(4) {
+  background-color: white;
+}
+
+main article ol:nth-of-type(7) li:nth-of-type(6), main article ol:nth-of-type(8) li:nth-of-type(6), main article ol:nth-of-type(9) li:nth-of-type(6), main article ol:nth-of-type(16) li:nth-of-type(6), main article ol:nth-of-type(17) li:nth-of-type(6), main article ol:nth-of-type(18) li:nth-of-type(6), main article ol:nth-of-type(25) li:nth-of-type(6), main article ol:nth-of-type(26) li:nth-of-type(6), main article ol:nth-of-type(27) li:nth-of-type(6) {
+  background-color: green;
+}
+
+main article ol li {
+  position: absolute;
+  border: 0.25em solid black;
+  border-radius: 0.5em;
+  background-color: aqua;
+}
+
+main article ol li:nth-of-type(1), main article ol li:nth-of-type(3) {
+  height: var(--hoogte);
+  width: var(--breedte);
+}
+
+main article ol li:nth-of-type(2), main article ol li:nth-of-type(4) {
+  height: var(--diepte);
+  width: var(--breedte);
+}
+
+main article ol li:nth-of-type(5), main article ol li:nth-of-type(6) {
+  height: var(--hoogte);
+  width: var(--diepte);
+}
+
+main article ol li:nth-of-type(1) {
+  -webkit-transform: rotateY(0deg) translateZ(calc(var(--diepte) / 2));
+          transform: rotateY(0deg) translateZ(calc(var(--diepte) / 2));
+}
+
+main article ol li:nth-of-type(2) {
+  -webkit-transform: rotateX(90deg) translateZ(calc(var(--diepte) / 2));
+          transform: rotateX(90deg) translateZ(calc(var(--diepte) / 2));
+}
+
+main article ol li:nth-of-type(3) {
+  -webkit-transform: rotateY(180deg) translateZ(calc(var(--diepte) / 2));
+          transform: rotateY(180deg) translateZ(calc(var(--diepte) / 2));
+}
+
+main article ol li:nth-of-type(4) {
+  -webkit-transform: rotateX(-90deg) translateZ(calc(var(--hoogte) - (var(--diepte) / 2)));
+          transform: rotateX(-90deg) translateZ(calc(var(--hoogte) - (var(--diepte) / 2)));
+}
+
+main article ol li:nth-of-type(5) {
+  -webkit-transform: rotateY(90deg) translateZ(calc(var(--diepte) / -2));
+          transform: rotateY(90deg) translateZ(calc(var(--diepte) / -2));
+}
+
+main article ol li:nth-of-type(6) {
+  -webkit-transform: rotateY(90deg) translateZ(calc(var(--breedte) - (var(--diepte) / 2)));
+          transform: rotateY(90deg) translateZ(calc(var(--breedte) - (var(--diepte) / 2)));
+}
+/*# sourceMappingURL=style.css.map */
