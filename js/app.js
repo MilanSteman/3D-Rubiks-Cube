@@ -4,9 +4,11 @@ const verticalMove = () => {
 
     const movedItems = document.querySelectorAll(`article ol[data-x-square='3']`);
     console.log(movedItems)
-    movedItems.forEach((item) => {
-        item.classList.add('flip')
-    })
+    setTimeout(() => {
+        movedItems.forEach((item) => {
+            item.classList.add('flip')
+        })
+    }, 2000);
 }
 
 verticalMove()
